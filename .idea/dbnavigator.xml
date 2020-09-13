@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="1da4eb3c-1fc0-4f21-af76-c9d02e29bde7">
-        <schema name="springboot_webservice" object-types="view, procedure, table, function" />
+        <schema name="springboot_webservice" object-types="column, dataset trigger, view, procedure, table, function, constraint, index" />
       </connection>
     </loaded-nodes>
   </component>
@@ -68,7 +68,7 @@ CREATE TABLE test(
 insert into test(content) values ('테스트');
 
 select * from test;]]></console>
-      <console name="springboot2" type="STANDARD" schema="" session="Main"><![CDATA[CREATE TABLE SPRING_SESSION (
+      <console name="springboot2" type="STANDARD" schema="springboot_webservice" session="Main"><![CDATA[CREATE TABLE SPRING_SESSION (
 	PRIMARY_ID CHAR(36) NOT NULL,
 	SESSION_ID CHAR(36) NOT NULL,
 	CREATION_TIME BIGINT NOT NULL,
@@ -89,7 +89,15 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
 	ATTRIBUTE_BYTES BLOB NOT NULL,
 	CONSTRAINT SPRING_SESSION_ATTRIBUTES_PK PRIMARY KEY (SESSION_PRIMARY_ID, ATTRIBUTE_NAME),
 	CONSTRAINT SPRING_SESSION_ATTRIBUTES_FK FOREIGN KEY (SESSION_PRIMARY_ID) REFERENCES SPRING_SESSION(PRIMARY_ID) ON DELETE CASCADE
-) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;]]></console>
+) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
+
+
+CREATE TABLE posts (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(500) NOT NULL,
+	content TEXT NOT NULL,
+	author VARCHAR(1000)
+)]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
