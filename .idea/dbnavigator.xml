@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="1da4eb3c-1fc0-4f21-af76-c9d02e29bde7">
-        <schema name="springboot_webservice" object-types="column, dataset trigger, view, procedure, table, function, constraint, index" />
+        <schema name="springboot_webservice" object-types="table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -96,7 +96,19 @@ CREATE TABLE posts (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	title VARCHAR(500) NOT NULL,
 	content TEXT NOT NULL,
-	author VARCHAR(1000)
+	author VARCHAR(1000),
+	created_date DATETIME,
+	modified_date DATETIME
+)
+
+CREATE TABLE user (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(500) NOT NULL,
+	email VARCHAR(1000) NOT NULL,
+	picture TEXT,
+	role TEXT,
+	created_date DATETIME,
+	modified_date DATETIME
 )]]></console>
     </connection>
   </component>
