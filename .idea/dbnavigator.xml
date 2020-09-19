@@ -23,11 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="1da4eb3c-1fc0-4f21-af76-c9d02e29bde7">
-        <schema name="springboot_webservice" object-types="table" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1da4eb3c-1fc0-4f21-af76-c9d02e29bde7">
